@@ -3,9 +3,11 @@ require_once('classes/database.php');
 $con = new database();
 session_start();
  
+if(empty($_SESSION['username'])|| $_SESSION['account_type'] !=0)  {
+  header('location:login.php');
+  exit();
+}
 
- 
- 
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
     if ($con->delete($id)) {
@@ -14,7 +16,6 @@ if (isset($_POST['delete'])) {
         echo "Something went wrong.";
     }
 }
- 
 ?>
  
 <!DOCTYPE html>
@@ -169,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (status) {
     let title, text, icon;
     switch (status) {
-      case 'success':
+        case 'success':
         title = 'Success!';
         text = 'Record is successfully deleted.';
         icon = 'success';
@@ -179,7 +180,17 @@ document.addEventListener('DOMContentLoaded', function() {
         text = 'Record is successfully updated.';
         icon = 'success';
         break;
-      case 'error':
+        case 'success2':
+        title = 'Login Success!';
+        text = 'Record successfully logged in.';
+        icon = 'success';
+        break;
+        case 'success3':
+          title = 'Success!';
+          text = 'Password successfully changed.';
+          icon = 'success'
+        break;
+        case 'error':
         title = 'Error!';
         text = 'Something went wrong.';
         icon = 'error';
