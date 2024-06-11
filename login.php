@@ -6,7 +6,7 @@ session_start();
 // If the user is already logged in, check their account type and redirect accordingly
 if (isset($_SESSION['username']) && isset($_SESSION['account_type'])) {
   if ($_SESSION['account_type'] == 0) {
-    header('location:index.php?status=success2');
+    header('location:index.php');
   } else if ($_SESSION['account_type'] == 1) {
     header('location:user_account.php');
   }

@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
         case 'success2':
         title = 'Login Success!';
-        text = 'Record successfully logged in.';
+        text = 'You are logged in.';
         icon = 'success';
         break;
         case 'success3':

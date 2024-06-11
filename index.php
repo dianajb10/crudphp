@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         text = 'Record is successfully deleted.';
         icon = 'success';
         break;
-        case 'success1':
+        case 'success1': //ewan
         title = 'Success!';
         text = 'Record is successfully updated.';
         icon = 'success';
